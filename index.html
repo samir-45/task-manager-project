@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-theme="light" class="bg-[#F4F7FF]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class=" min-h-screen">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm w-11/12 mx-auto m-5 rounded-lg px-4">
+        <div class=" flex-1 flex items-center">
+            <div>
+                <img class="w-10" src="./assets/logo.png" alt="">
+            </div>
+            
+          <a class="btn btn-ghost text-xl font-normal">Dev<span class="-ml-1 font-bold">Board</span></a>
+        </div>
+        <div class="flex-none space-x-4">
+
+
+            <!-- Task counter checkbox -->
+          <div class="dropdown dropdown-end">
+            <div class="flex bg-[#F4F7FF] items-center justify-center w-24 h-12 rounded-2xl px-2">
+                <div><img class="w-7 mx-2" src="./assets/checkbox.png" alt=""></div>
+                <p id="task-check" class="font-bold text-2xl mx-2">23</p>
+            </div>
+            
+          </div>
+
+          <!-- Color wheel -->
+          <div class="dropdown dropdown-end">
+            <div id="theme-cng" class="bg-[#F4F7FF] w-12 h-12 flex items-center text-center justify-center rounded-full cursor-pointer">
+                <div><img class="w-8" src="./assets/theme-btn.png" alt=""></div>
+                
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- Navbar END -->
+
+
+      <!-- Main section -->
+       <main class="w-11/12 mx-auto flex">
+        <!-- Left section -->
+         <section class="bg-white w-9/12 mr-5 p-4 rounded-lg ">
+            <!-- Upper div -->
+             <div class="flex gap-4 pb-4 mb-4 border-b-1 border-[#c3c5ca] border-dashed">
+                <!-- Box - 1 -->
+                <div class="1st Box bg-[#F4F7FF] flex min-h-28 w-3/12 rounded-lg justify-center items-center gap-2">
+                    <div>
+                        <div class="w-11 h-11 rounded-full bg-white flex items-center justify-center"><img class="w-5" src="./assets/checkbox.png" alt=""></div>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Task Assigned </p>
+                        <p class="text-2xl font-bold">0<span id="task-assign">6</span></p>
+                    </div>
+                </div>
+
+                <!-- Box - 2 -->
+                <div id="upper-box-2" class="2nd Box min-h-28 flex w-6/12 rounded-lg items-center justify-evenly bg-gradient-to-r from-[#3752fd] via-[#4a62fe] via-[4%] to-[#8a97ed] cursor-pointer">
+                    <div><img class="w-18" src="./assets/board.png" alt=""></div>
+                    <p class="font-semibold text-xl text-white">Discover Something <br> New Today!</p>
+                </div>
+
+                <!-- Box - 3 -->
+                <div class="3rd Box bg-[#F4F7FF] min-h-28 flex w-3/12 rounded-lg justify-center items-center gap-2">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center"><img class="w-6" src="./assets/calender.png" alt=""></div>
+                    </div>
+                    <div>
+                        <p id="day"></p>
+                        <p id="week" class="font-bold"></p>
+                    </div>
+                </div>
+             </div>
+
+
+             <!-- lower div -->
+              <div class="grid grid-cols-3 gap-6">
+                <!-- Box - 1 -->
+                <div class="bg-[#F4F7FF] rounded-lg p-4">
+                    <div><button class="px-3 py-2 mb-2 rounded-lg bg-white text-sm text-black">ShopEase</button></div>
+                    <h2 id="task-title1" class="mb-2 text-xl font-semibold">Fix Mobile Button Issue </h2>
+                    <textarea  class="text-black bg-white border-none rounded-lg p-2 overflow-ellipsis mb-2" id="textArea" rows="2" cols="26" placeholder="Debug using Chrome DevTools, check for...">
+                    </textarea>
+                    <div class="flex justify-between border-t-1 pt-3 border-[#c3c5ca] border-dashed">
+                        <div>
+                            <p class="text-gray-400">Deadline</p>
+                            <h2 class="font-semibold ">21 March 2025</h2>
+                        </div>
+                        <div><button id="task-btn1" class="bg-[#3752FD] task-btn text-white text-md font-semibold px-2 py-2 rounded-lg mb-3 cursor-pointer">Completed</button></div>
+                    </div>
+                 </div>
+
+
+                <!-- Box - 2 -->
+                <div class="bg-[#F4F7FF] rounded-lg p-4">
+                    <div><button class="px-3 py-2 mb-2 rounded-lg bg-white text-sm text-black">CloudSync</button></div>
+                    <h2 id="task-title2"  class="mb-2 text-xl font-semibold">Add Dark Mode</h2>
+                    <textarea  class="text-black bg-white border-none rounded-lg p-2 overflow-ellipsis mb-2" id="textArea2" rows="2" cols="26" placeholder="Store the user's preference in localStorage...">
+                    </textarea>
+                    <div class="flex justify-between border-t-1 pt-3 border-[#c3c5ca] border-dashed">
+                        <div>
+                            <p class="text-gray-400">Deadline</p>
+                            <h2 class="font-semibold ">21 March 2025</h2>
+                        </div>
+                        <div><button id="task-btn2" class="bg-[#3752FD] task-btn text-white text-md font-semibold px-2 py-2 rounded-lg mb-3 cursor-pointer">Completed</button></div>
+                    </div>
+                 </div>
+
+
+                <!-- Box - 3 -->
+                <div class="bg-[#F4F7FF] rounded-lg p-4">
+                    <div><button class="px-3 py-2 mb-2 rounded-lg bg-white text-sm text-black">SwiftPay</button></div>
+                    <h2 id="task-title3"  class="mb-2 text-xl font-semibold">Optimize  Home page </h2>
+                    <textarea  class="text-black bg-white border-none rounded-lg p-2 overflow-ellipsis mb-2" id="textArea3" rows="2" cols="26" placeholder="Debug using Chrome DevTools, check for...">
+                    </textarea>
+                    <div class="flex justify-between border-t-1 pt-3 border-[#c3c5ca] border-dashed">
+                        <div>
+                            <p class="text-gray-400">Deadline</p>
+                            <h2 class="font-semibold ">21 March 2025</h2>
+                        </div>
+                        <div><button id="task-btn3" class="bg-[#3752FD] task-btn text-white text-md font-semibold px-2 py-2 rounded-lg mb-3 cursor-pointer">Completed</button></div>
+                    </div>
+                 </div>
+
+
+                <!-- Box - 4 -->
+                <div class="bg-[#F4F7FF] rounded-lg p-4">
+                    <div><button class="px-3 py-2 mb-2 rounded-lg bg-white text-sm text-black">Meta</button></div>
+                    <h2 id="task-title4"  class="mb-2 text-xl font-semibold">Add new emoji 🤲</h2>
+                    <textarea  class="text-black bg-white border-none rounded-lg p-2 overflow-ellipsis mb-2" id="textArea4" rows="2" cols="26" placeholder="Debug using Chrome DevTools, check for...">
+                    </textarea>
+                    <div class="flex justify-between border-t-1 pt-3 border-[#c3c5ca] border-dashed">
+                        <div>
+                            <p class="text-gray-400">Deadline</p>
+                            <h2 class="font-semibold ">21 March 2025</h2>
+                        </div>
+                        <div><button id="task-btn4" class="bg-[#3752FD] task-btn text-white text-md font-semibold px-2 py-2 rounded-lg mb-3 cursor-pointer">Completed</button></div>
+                    </div>
+                 </div>
+
+
+                <!-- Box - 5 -->
+                <div class="bg-[#F4F7FF] rounded-lg p-4">
+                    <div><button class="px-3 py-2 mb-2 rounded-lg bg-white text-sm text-black">Google LLC</button></div>
+                    <h2 id="task-title5"  class="mb-2 text-xl font-semibold">Integrate OpenAI API </h2>
+                    <textarea  class="text-black bg-white border-none rounded-lg p-2 overflow-ellipsis mb-2" id="textArea5" rows="2" cols="26" placeholder="Debug using Chrome DevTools, check for...">
+                    </textarea>
+                    <div class="flex justify-between border-t-1 pt-3 border-[#c3c5ca] border-dashed">
+                        <div>
+                            <p class="text-gray-400">Deadline</p>
+                            <h2 class="font-semibold ">21 March 2025</h2>
+                        </div>
+                        <div><button id="task-btn5" class="bg-[#3752FD] task-btn text-white text-md font-semibold px-2 py-2 rounded-lg mb-3 cursor-pointer">Completed</button></div>
+                    </div>
+                 </div>
+
+
+                <!-- Box - 6 -->
+                 <div class="bg-[#F4F7FF] rounded-lg p-4">
+                    <div><button class="px-3 py-2 mb-2 rounded-lg bg-white text-sm text-black">Glassdoar</button></div>
+                    <h2 id="task-title6"  class="mb-2 text-xl font-semibold">Improve Job searching </h2>
+                    <textarea  class="text-black bg-white border-none rounded-lg p-2 overflow-ellipsis mb-2" id="textArea6" rows="2" cols="26" placeholder="Debug using Chrome DevTools, check for...y">
+                    </textarea>
+                    <div class="flex justify-between border-t-1 pt-3 border-[#c3c5ca] border-dashed">
+                        <div>
+                            <p class="text-gray-400">Deadline</p>
+                            <h2 class="font-semibold ">21 March 2025</h2>
+                        </div>
+                        <div><button id="task-btn6" class="bg-[#3752FD] task-btn text-white text-md font-semibold px-2 py-2 rounded-lg mb-3 cursor-pointer">Completed</button></div>
+                    </div>
+                 </div>
+
+
+
+              </div>
+         </section>
+
+
+
+
+         <!-- Right Section -->
+          <section class="bg-white w-3/12 max-h-screen rounded-lg p-4 min-h-screen">
+            <!-- Upper div -->
+             <div class="flex flex-col justify-start items-center gap-4 border-b-1 border-[#c3c5ca] border-dashed">
+                <div class="flex items-center text-center mx-auto gap-3">
+                    <div><img src="./assets/activity.png" alt=""></div>
+                    <p>Activity Log</p>
+                </div>
+                <div><button id="history-btn" class="bg-[#3752FD] text-white text-lg font-semibold px-3 py-2 rounded-lg mb-3 cursor-pointer">Clear History</button></div>
+             </div>
+
+
+             <!-- Lower div -->
+              <div id="lower-div" class="min-h-screen overflow-auto">
+                <!-- <p class="text-gray-600 bg-[#F4F7FF] rounded-lg p-2 mt-4">You have Complete The Task Add Dark Mode at 12:48:15 PM</p> -->
+              </div>
+          </section>
+       </main>
+
+
+
+    <script src="./script/main.js"></script>
+    <script src="./script/date & time.js"></script>
+</body>
+</html>
